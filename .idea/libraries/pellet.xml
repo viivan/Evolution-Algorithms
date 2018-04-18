@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="pellet">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/pellet/aterm-java-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pellet/pellet.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

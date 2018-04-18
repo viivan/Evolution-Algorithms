@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+xmlns:qos="http://www.daml.org/services/owl-s/1.1/Qos.owl#"
+xmlns:qosCharacteristic="http://www.daml.org/services/owl-s/1.1/QosCharacteristic.owl#"
+xml:base="http://127.0.0.1/services/delete_order_service.owls">
+
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://127.0.0.1/ontology/Service.owl"/>
+    <owl:imports rdf:resource="http://127.0.0.1/ontology/Process.owl"/>
+    <owl:imports rdf:resource="http://127.0.0.1/ontology/Profile.owl"/>
+    <owl:imports rdf:resource="http://127.0.0.1/ontology/order.owl"/>
+    <owl:imports rdf:resource="http://127.0.0.1/ontology/response.owl"/>
+  </owl:Ontology>
+
+  <service:Service rdf:ID="DELETE_ORDER_SERVICE">
+    <service:presents rdf:resource="#DELETE_ORDER_PROFILE"/>
+    <service:describedBy rdf:resource="#DELETE_ORDER_PROCESS"/>
+    <service:performs rdf:resource="DELETE_ORDER_QoS"/>
+  </service:Service>
+
+  <profile:Profile rdf:ID="DELETE_ORDER_PROFILE">
+    <service:isPresentedBy rdf:resource="#DELETE_ORDER_SERVICE"/>
+    <profile:serviceName xml:lang="en">DeleteOrderService</profile:serviceName>
+    <profile:textDescription xml:lang="en">Delete an order for a hotel reservation</profile:textDescription>
+    <profile:hasInput rdf:resource="#Order"/>
+    <profile:hasOutput rdf:resource="#Result"/>
+    <profile:has_process rdf:resource="DELETE_ORDER_PROCESS"/>
+  </profile:Profile>
+
+  <process:AtomicProcess rdf:ID="DELETE_ORDER_PROCESS">
+    <service:describes rdf:resource="#DELETE_ORDER_SERVICE"/>
+    <profile:hasInput rdf:resource="#Order"/>
+    <profile:hasOutput rdf:resource="#Result"/>
+  </process:AtomicProcess>
+
+  <process:Input rdf:ID="Order">
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1/ontology/order.owl#Order</process:parameterType>
+    <rdfs:label/>
+  </process:Input>
+  <process:Output rdf:ID="Result">
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1/ontology/response.owl#Result</process:parameterType>
+    <rdfs:label/>
+  </process:Output>
+
+  <qos:Qos rdf:ID="DELETE_ORDER_QoS">
+    <service:isPerformedBy rdf:resource="#DELETE_ORDER_SERVICE"/>
+    <qosCharacteristic:QosProperty rdf:ID="Response_Time">
+      <qosCharacteristic:qosPropertyName xml:lang="en">response_time</qosCharacteristic:qosPropertyName>
+      <qosCharacteristic:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.4</qosCharacteristic:hasValue>
+      <qosCharacteristic:hasUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">second</qosCharacteristic:hasUnit>
+      <qosCharacteristic:hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cost</qosCharacteristic:hasType>
+    </qosCharacteristic:QosProperty>
+    <qosCharacteristic:QosProperty rdf:ID="Price">
+      <qosCharacteristic:qosPropertyName xml:lang="en">price</qosCharacteristic:qosPropertyName>
+      <qosCharacteristic:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0</qosCharacteristic:hasValue>
+      <qosCharacteristic:hasUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dollar</qosCharacteristic:hasUnit>
+      <qosCharacteristic:hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cost</qosCharacteristic:hasType>
+    </qosCharacteristic:QosProperty>
+    <qosCharacteristic:QosProperty rdf:ID="Reliability">
+      <qosCharacteristic:qosPropertyName xml:lang="en">reliability</qosCharacteristic:qosPropertyName>
+      <qosCharacteristic:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">97</qosCharacteristic:hasValue>
+      <qosCharacteristic:hasUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">percentage</qosCharacteristic:hasUnit>
+      <qosCharacteristic:hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">benefit</qosCharacteristic:hasType>
+    </qosCharacteristic:QosProperty>
+    <qosCharacteristic:QosProperty rdf:ID="Availability">
+      <qosCharacteristic:qosPropertyName xml:lang="en">availability</qosCharacteristic:qosPropertyName>
+      <qosCharacteristic:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">99</qosCharacteristic:hasValue>
+      <qosCharacteristic:hasUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">percentage</qosCharacteristic:hasUnit>
+      <qosCharacteristic:hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">benefit</qosCharacteristic:hasType>
+    </qosCharacteristic:QosProperty>
+  </qos:Qos>
+
+</rdf:RDF>

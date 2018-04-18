@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="axis">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/axis/wsdl4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/axis-ant.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/axis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/commons-httpclient-3.0-alpha1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/log4j-1.2.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/commons-discovery.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/saaj.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/axis/jaxrpc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
