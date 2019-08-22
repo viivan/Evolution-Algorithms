@@ -1,5 +1,5 @@
 # Algorithms
-论文第五章算法5.1~算法5.8的Java代码实现，其中OWL的解析采用jena实现，OWL-S的解析采用jena+dom4j实现
+算法采用Java代码实现，其中OWL的解析采用jena实现，OWL-S的解析采用jena+dom4j实现  
 
 # MyOntology
 本体概念类，存储OWL文件中解析得到的本体概念
