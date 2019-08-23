@@ -15,7 +15,7 @@ import java.util.Map;
 public class Algorithms {
 
     /**
-     * 算法5.1 概念相似度计算
+     * 1 概念相似度计算
      * @param A 本体概念A
      * @param B 本体概念B
      * @param PD 样本训练出的条件概率分布列
@@ -110,7 +110,7 @@ public class Algorithms {
     }
 
     /**
-     * 算法5.2 输入相似度计算
+     * 2 输入相似度计算
      * @param input1 服务S1的输入
      * @param input2 服务S2的输入
      * @return 服务S1，S2的输入相似度
@@ -149,7 +149,7 @@ public class Algorithms {
     }
 
     /**
-     * 算法5.3 输出相似度计算
+     * 3 输出相似度计算
      * @param output1 服务S1的输出
      * @param output2 服务S2的输出
      * @return 服务S1，S2的输出相似度
@@ -187,7 +187,7 @@ public class Algorithms {
     }
 
     /**
-     * 算法5.4 QoS权重计算
+     * 4 QoS权重计算
      * @param n 阶数
      * @param A 成对比较矩阵
      * @return 权重向量
@@ -218,7 +218,7 @@ public class Algorithms {
     }
 
     /**
-     * 算法5.5 一致性指标计算
+     * 5 一致性指标计算
      * @param n 阶数
      * @param A 成对比较矩阵
      * @param W 权重向量
@@ -247,7 +247,7 @@ public class Algorithms {
     }
 
     /**
-     * 算法5.6 DBSCAN服务聚类算法
+     * 6 RDBSCAN服务聚类算法
      * @param services 服务样本集
      * @param eps 邻域参数
      * @param minPts 邻域参数
@@ -301,7 +301,7 @@ public class Algorithms {
     }
 
     /**
-     * 算法5.7 服务过滤算法
+     * 7 服务过滤算法
      * @param candidateServices 候选服务
      * @param qoSConstraints QoS约束
      * @return 过滤后的候选服务
@@ -330,7 +330,7 @@ public class Algorithms {
 
 
     /**
-     * 算法5.8 服务综合评分计算
+     * 8 服务综合评分计算
      * @param candidateServices 候选服务
      * @param qoSConstraints QoS约束
      * @param w1 功能相似度权重
@@ -365,7 +365,7 @@ public class Algorithms {
      * @return 两个概念之间的相似度
      */
     private static ArrayList<Integer> computeFeature(String name1, String name2) {
-        // 在本项目进行简化仅返回空值，实际具体实现来自文献56，包括条件概率分布列PD[][][]和调整因子alpha、beta等训练结果，
+        // 实际具体细节来自论文中所述文献，包括条件概率分布列PD[][][]和调整因子alpha、beta等训练结果，在此版本进行简化仅返回空值，
         return null;
     }
 
